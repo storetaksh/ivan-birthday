@@ -18,17 +18,14 @@ const Cloud = ({ className, style }: { className?: string, style?: React.CSSProp
 
 const generateClouds = (layer: 'white' | 'purple', isTop: boolean) => {
   const clouds = [];
-  // 20 clouds spaced ~125px apart to cover 2400px
   const bases = [-100, 25, 150, 275, 400, 525, 650, 775, 900, 1025, 1150, 1275, 1400, 1525, 1650, 1775, 1900, 2025, 2150, 2275];
   const widths = [240, 280, 220, 300, 250, 270, 230, 310, 260, 290, 220, 280, 250, 300, 240, 270, 230, 290, 260, 310];
   const rots = [0, -5, 5, -2, 2, -5, 0, 5, 0, -5, 2, -2, 0, 5, -5, 2, 0, -5, 5, -2];
   const tops = [-70, -80, -60, -75, -85, -65, -70, -80, -60, -75, -85, -65, -70, -80, -60, -75, -85, -65, -70, -80];
 
   for (let i = 0; i < 20; i++) {
-    // Purple layer is shifted left and down (more positive Y) to peek out behind
     const offsetLeft = layer === 'purple' ? -40 : 0;
     const offsetTop = layer === 'purple' ? 25 : 0;
-
     const rot = isTop ? 180 + rots[i] : rots[i];
 
     clouds.push({
@@ -197,10 +194,10 @@ export default function InvitationExperience({ eventData }: { eventData?: any })
           {/* HEADER TEXT ABOVE ENVELOPE */}
           <div className="absolute top-[18dvh] md:top-[22dvh] left-1/2 -translate-x-1/2 w-full flex flex-col items-center gap-2 text-center z-10 pointer-events-none">
             <div className="flex flex-col items-center gap-2 transition-opacity duration-1000 ease-out">
-              <h3 className="font-sans uppercase tracking-[0.1em] text-[#A67C00] text-sm md:text-base font-bold">
+              <h3 className="font-sans uppercase tracking-[0.1em] text-[#A67C00] text-sm md:text-base max-[400px]:text-[10px] font-bold">
                 {eventData?.eventType === "1st Birthday" ? "You're Invited to celebrate" : "You're Invited to a"}
               </h3>
-              <h2 className="font-script text-5xl md:text-7xl text-[#C69C54] drop-shadow-sm">
+              <h2 className="font-script text-5xl md:text-7xl max-[400px]:text-4xl text-[#C69C54] drop-shadow-sm">
                 {eventData?.eventType === "1st Birthday" ? `${eventData?.baby?.name}'s 1st Birthday` : (eventData?.eventType || 'Baby Shower')}
               </h2>
             </div>
@@ -250,33 +247,24 @@ export default function InvitationExperience({ eventData }: { eventData?: any })
               }}
             >
               <svg viewBox="0 0 800 500" className="w-full h-full preserve-3d" preserveAspectRatio="none">
-                <filter id="drop-shadow">
-                  <feDropShadow dx="0" dy="-4" stdDeviation="6" floodColor="#000000" floodOpacity="0.15" />
-                </filter>
-                <filter id="inner-shadow">
-                  <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.1" />
-                </filter>
+                <defs>
+                  {/* Procedural paper texture filter */}
+                  <filter id="paper-texture" x="0" y="0" width="100%" height="100%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+                    <feColorMatrix type="matrix" values="1 0 0 0 0  0 0.98 0 0 0  0 0.94 0 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise" />
+                    <feBlend in="SourceGraphic" in2="coloredNoise" mode="multiply" />
+                  </filter>
+                  <filter id="drop-shadow">
+                    <feDropShadow dx="0" dy="-4" stdDeviation="6" floodColor="#000000" floodOpacity="0.15" />
+                  </filter>
+                </defs>
                 {/* Left Flap */}
-                <path d="M 0 0 L 380 260 L 0 500 Z" fill="#F3EFE6" stroke="#E6E2D8" strokeWidth="2" />
+                <path d="M 0 0 L 35 60 L 360 230 Q 400 250 360 270 L 35 440 L 0 500 Z" fill="#F3EFE6" stroke="#E6E2D8" strokeWidth="2" filter="url(#paper-texture)" />
                 {/* Right Flap */}
-                <path d="M 800 0 L 420 260 L 800 500 Z" fill="#F3EFE6" stroke="#E6E2D8" strokeWidth="2" />
+                <path d="M 800 0 L 765 60 L 440 230 Q 400 250 440 270 L 765 440 L 800 500 Z" fill="#F3EFE6" stroke="#E6E2D8" strokeWidth="2" filter="url(#paper-texture)" />
                 {/* Bottom Flap */}
-                <path d="M 0 500 L 400 230 L 800 500 Z" fill="#FDFBF4" stroke="#E6E2D8" strokeWidth="1.5" filter="url(#drop-shadow)" />
+                <path d="M 0 500 L 35 440 L 350 250 Q 400 210 450 250 L 765 440 L 800 500 Z" fill="#F3EFE6" stroke="#E6E2D8" strokeWidth="2" filter="url(#paper-texture)" />
               </svg>
-
-              {/* Stamp Detail */}
-              {/* <div className="absolute right-6 top-16 opacity-90 scale-90 md:scale-100 -rotate-3">
-                <div className="w-16 h-20 bg-[#f9f9f9] border-[3px] border-dotted border-[#cfc8b9] p-1 shadow-sm flex flex-col items-center justify-center">
-                  <span className="font-serif text-[10px] uppercase text-stone-500 tracking-wider text-center leading-tight">You Are<br />Invited</span>
-                  <div className="w-8 h-8 mt-2 opacity-50">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-stone-700">
-                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
-                      <path d="M12 22C14.7614 22 17 17.5228 17 12C17 6.47715 14.7614 2 12 2C9.23858 2 7 6.47715 7 12C7 17.5228 9.23858 22 12 22Z" />
-                      <path d="M22 12C22 14.7614 17.5228 17 12 17C6.47715 17 2 14.7614 2 12C2 9.23858 6.47715 7 12 7C17.5228 7 22 9.23858 22 12Z" />
-                    </svg>
-                  </div>
-                </div>
-              </div> */}
             </div>
 
             {/* TOP FLAP Z-INDEX LAYER - Switches slowly behind letter when open */}
@@ -303,7 +291,15 @@ export default function InvitationExperience({ eventData }: { eventData?: any })
                   }}
                 >
                   <svg viewBox="0 0 800 400" className="w-full h-full drop-shadow-xl" preserveAspectRatio="none">
-                    <path d="M 0 0 L 400 320 L 800 0 Z" fill="#FDFBF4" stroke="#E6E2D8" strokeWidth="2" />
+                    <defs>
+                      <filter id="paper-texture-top" x="0" y="0" width="100%" height="100%">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+                        <feColorMatrix type="matrix" values="1 0 0 0 0  0 0.98 0 0 0  0 0.94 0 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise" />
+                        <feBlend in="SourceGraphic" in2="coloredNoise" mode="multiply" />
+                      </filter>
+                    </defs>
+                    {/* Updated path for curvature on the flap tip and corner cuts */}
+                    <path d="M 0 0 L 35 60 L 350 270 Q 400 320 450 270 L 765 60 L 800 0 Z" fill="#FDFBF4" stroke="#E6E2D8" strokeWidth="2" filter="url(#paper-texture-top)" />
                   </svg>
                 </div>
               </div>
@@ -377,4 +373,3 @@ export default function InvitationExperience({ eventData }: { eventData?: any })
     </>
   );
 }
-
