@@ -1,0 +1,45 @@
+{
+    "eventType": "1st Birthday",
+    "baby": {
+        "name": "Leo",
+        "parents": {
+            "mother": "Jane",
+            "father": "Joseph"
+        }
+    },
+    "celebrations": [
+        {
+            "name": "Birthday Celebration",
+            "date": "May 6, 2026",
+            "time": "04:00 PM",
+            "venue": "KL7 Hotel & Banquets, near Gai Ghat, Patna, Bihar",
+            "googleMapsUrl": "https://www.google.com/maps/dir//KL7+Hotel+%26+Banquets,+Raja+Ghat,+Patna,+near+Gai+Ghat,+Alamganj,+Patna,+Bihar+800007/@25.6132805,85.1994117,17z/data=!4m20!1m10!3m9!1s0x39ed5fc0fa045c77:0x1f043ce8ee296988!2sKL7+Hotel+%26+Banquets!5m2!4m1!1i2!8m2!3d25.6132805!4d85.1994117!16s%2Fg%2F11k03tn_z1!4m8!1m0!1m5!1m1!1s0x39ed5fc0fa045c77:0x1f043ce8ee296988!2m2!1d85.1994117!2d25.6132805!3e0?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",
+            "showLocation": true,
+            "mapImage": "assets/images/map.jpeg",
+            "dressCode": "Casual & Cute",
+            "highlight": true
+        }
+    ],
+    "contact": {
+        "phone": [
+            {
+                "name": "Joseph",
+                "number": "+919876543210"
+            },
+            {
+                "name": "Jane",
+                "number": "+919876543211"
+            }
+        ]
+    },
+    "messages": {
+        "inviteText": "With immense joy and heartfelt happiness, we invite you to celebrate the 1st birthday of our little sunshine, Leo. Join us for an evening of fun, laughter, and beautiful memories.",
+        "thankYou": "Thank you for being part of our journey.",
+        "coupleQuote": ""
+    },
+    "music": {
+        "url": "assets/music/music.mp3",
+        "autoplay": true
+    },
+    "websiteUrl": "https://leosfirstbirthday.netlify.app/"
+}
