@@ -164,7 +164,7 @@ export default function InvitationExperience({ eventData }: { eventData?: any })
         >
           {/* MINT GREEN BASE WITH SUBTLE PATTERN */}
           <div className="absolute inset-0 bg-[#C1E8D5]">
-            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:24px_24px]" />
+            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(#ffffff_2px,transparent_2px)] bg-size-[24px_24px]" />
           </div>
 
           {/* CLOUDS TOP */}
@@ -194,7 +194,7 @@ export default function InvitationExperience({ eventData }: { eventData?: any })
           {/* HEADER TEXT ABOVE ENVELOPE */}
           <div className="absolute top-[18dvh] md:top-[22dvh] left-1/2 -translate-x-1/2 w-full flex flex-col items-center gap-2 text-center z-10 pointer-events-none">
             <div className="flex flex-col items-center gap-2 transition-opacity duration-1000 ease-out">
-              <h3 className="font-sans uppercase tracking-[0.1em] text-[#A67C00] text-sm md:text-base max-[400px]:text-[10px] font-bold">
+              <h3 className="font-sans uppercase tracking-widest text-[#A67C00] text-sm md:text-base max-[400px]:text-[10px] font-bold">
                 {eventData?.eventType === "1st Birthday" ? "You're Invited to celebrate" : "You're Invited to a"}
               </h3>
               <h2 className="font-script text-5xl md:text-7xl max-[400px]:text-4xl text-[#C69C54] drop-shadow-sm">
