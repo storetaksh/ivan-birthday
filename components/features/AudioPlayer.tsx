@@ -12,13 +12,15 @@ export default function AudioPlayer({ musicUrl, autoplay = true }: { musicUrl: s
     audio.loop = true;
     audioRef.current = audio;
 
+    const events = ['click', 'touchstart', 'pointerdown'];
+
     const playAudio = () => {
       const promise = audio.play();
       if (promise !== undefined) {
         promise.then(() => {
           setIsPlaying(true);
           // Once successfully playing, we don't need the global click listener
-          document.removeEventListener('click', playAudio);
+          events.forEach(event => document.removeEventListener(event, playAudio, { capture: true }));
         }).catch(() => {
           // Failed to play (e.g. user hasn't interacted yet). 
           // Fail silently and wait for the next click.
@@ -35,8 +37,6 @@ export default function AudioPlayer({ musicUrl, autoplay = true }: { musicUrl: s
       }
     }
 
-    const events = ['click', 'touchstart', 'pointerdown'];
-    
     // Always listen for click to unlock audio if it hasn't started yet
     // Use capture: true so we intercept it before e.stopPropagation() is called on buttons
     events.forEach(event => document.addEventListener(event, playAudio, { capture: true }));
