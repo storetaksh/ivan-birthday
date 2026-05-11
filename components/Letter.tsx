@@ -189,9 +189,20 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
 
             {/* POP-OUT BABY */}
             <div className={`absolute left-0 right-0 top-0 h-0 pointer-events-none z-50 transition-all duration-1500 ease-[cubic-bezier(0.2,0.8,0.3,1)] origin-bottom ${isOpen ? 'scale-100 opacity-100 delay-500' : 'scale-50 opacity-0'}`}>
-                {/* Baby Image */}
+                {/* Baby Image Container */}
                 <div className="absolute top-[-80px] md:top-[-100px] max-[420px]:top-[-70px] left-1/2 -translate-x-1/2 w-56 h-56 md:w-80 md:h-80 max-[420px]:w-48 max-[420px]:h-48 z-30 drop-shadow-2xl pointer-events-none">
-                    <img src="/assets/images/baby-first.webp" alt="Baby" className="w-full h-full object-contain object-bottom pointer-events-auto" />
+                    {eventData?.sectionImages && eventData.sectionImages.length > 0 ? (
+                        eventData.sectionImages.map((imgSrc: string, idx: number) => (
+                            <img
+                                key={idx}
+                                src={imgSrc}
+                                alt={`Baby Illustration ${idx + 1}`}
+                                className={`absolute inset-0 w-full h-full object-contain object-bottom pointer-events-auto transition-opacity duration-1000 ${activeIndex === idx ? "opacity-100" : "opacity-0"}`}
+                            />
+                        ))
+                    ) : (
+                        <img src="/assets/images/baby-first.webp" alt="Baby" className="w-full h-full object-contain object-bottom pointer-events-auto" />
+                    )}
                 </div>
             </div>
 
@@ -417,7 +428,7 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
                             <div className={`transition-all duration-700 flex flex-col items-center ${activeIndex === totalSections - 1 || !isUnfolded ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 translate-y-0 pointer-events-auto'}`}>
                                 <button
                                     onClick={scrollToNext}
-                                    className={`flex flex-row items-center justify-center gap-2 group backdrop-blur-md px-5 py-2 max-[420px]:px-4 max-[420px]:py-1.5 rounded-full shadow-md transition-all active:scale-95 ${t.navBtnBg} cursor-pointer select-none mb-1 md:mb-1.5`}
+                                    className={`flex flex-row items-center justify-center gap-2 group backdrop-blur-md px-5 py-3 max-[420px]:px-4 max-[420px]:py-2 rounded-full shadow-md transition-all active:scale-95 ${t.navBtnBg} cursor-pointer select-none mb-1 md:mb-1.5`}
                                     style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" }}
                                 >
                                     <ChevronDown className={`w-3.5 h-3.5 md:w-4 md:h-4 animate-bounce ${t.navBtnIcon} pointer-events-none`} strokeWidth={3} />

@@ -7,6 +7,12 @@
             "father": "Sanjeev"
         }
     },
+    "sectionImages": [
+        "/assets/images/1.webp",
+        "/assets/images/2.jpeg",
+        "/assets/images/3.jpeg",
+        "/assets/images/4.jpeg"
+    ],
     "celebrations": [
         {
             "name": "Birthday Celebration",
