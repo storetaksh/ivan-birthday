@@ -190,7 +190,7 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
             {/* POP-OUT BABY */}
             <div className={`absolute left-0 right-0 top-0 h-0 pointer-events-none z-50 transition-all duration-1500 ease-[cubic-bezier(0.2,0.8,0.3,1)] origin-bottom ${isOpen ? 'scale-100 opacity-100 delay-500' : 'scale-50 opacity-0'}`}>
                 {/* Baby Image */}
-                <div className="absolute top-[-70px] md:top-[-100px] max-[450px]:top-[-50px] left-1/2 -translate-x-1/2 w-56 h-56 md:w-80 md:h-80 max-[450px]:w-48 max-[450px]:h-48 z-30 drop-shadow-2xl pointer-events-none">
+                <div className="absolute top-[-80px] md:top-[-100px] max-[420px]:top-[-70px] left-1/2 -translate-x-1/2 w-56 h-56 md:w-80 md:h-80 max-[420px]:w-48 max-[420px]:h-48 z-30 drop-shadow-2xl pointer-events-none">
                     <img src="/assets/images/baby-first.webp" alt="Baby" className="w-full h-full object-contain object-bottom pointer-events-auto" />
                 </div>
             </div>
@@ -198,12 +198,12 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
             {/* EDGE CLOUDS (Attached to letter, sliding naturally) */}
             <div className="absolute inset-0 pointer-events-none z-40">
                 {/* Left Cloud */}
-                <div className="absolute top-[120px] -left-6 md:-left-20 max-[450px]:w-20 max-[450px]:h-10 w-28 h-16 md:w-52 md:h-40 text-[#B5D4F5] anim-cloud-1 drop-shadow-lg opacity-90">
+                <div className="absolute top-[120px] -left-6 md:-left-20 max-[420px]:w-20 max-[420px]:h-10 w-28 h-16 md:w-52 md:h-40 text-[#B5D4F5] anim-cloud-1 drop-shadow-lg opacity-90">
                     <Cloud className="w-full h-full" />
                 </div>
 
                 {/* Right Cloud */}
-                <div className="absolute top-[65px] -right-8 md:-right-24 max-[450px]:w-24 max-[450px]:h-12 w-32 h-20 md:w-60 md:h-44 text-[#D3C1EB] anim-cloud-2 drop-shadow-xl opacity-90">
+                <div className="absolute top-[65px] -right-8 md:-right-24 max-[420px]:w-24 max-[420px]:h-12 w-32 h-20 md:w-60 md:h-44 text-[#D3C1EB] anim-cloud-2 drop-shadow-xl opacity-90">
                     <Cloud className="w-full h-full" />
                 </div>
             </div>
@@ -220,79 +220,79 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
                     <PastelAnimations />
 
                     {/* Rainbows */}
-                    <div className="absolute top-[15%] -left-8 opacity-80 rotate-15 max-[450px]:scale-75 max-[450px]:-left-12 origin-left">
+                    <div className="absolute top-[15%] -left-8 opacity-80 rotate-15 max-[420px]:scale-75 max-[420px]:-left-12 origin-left">
                         <RainbowSVG />
                     </div>
-                    <div className="absolute bottom-[20%] -right-8 opacity-80 -rotate-20 max-[450px]:scale-75 max-[450px]:-right-12 origin-right">
+                    <div className="absolute bottom-[20%] -right-8 opacity-80 -rotate-20 max-[420px]:scale-75 max-[420px]:-right-12 origin-right">
                         <RainbowSVG />
                     </div>
 
                     {/* Pastel Clouds scattered */}
-                    <div className="absolute top-[25%] right-4 max-[450px]:w-16 max-[450px]:h-10 w-24 h-16 text-[#B5D4F5] opacity-60 anim-float">
+                    <div className="absolute top-[25%] right-4 max-[420px]:w-16 max-[420px]:h-10 w-24 h-16 text-[#B5D4F5] opacity-60 anim-float">
                         <Cloud className="w-full h-full" />
                     </div>
-                    <div className="absolute top-[45%] left-2 max-[450px]:w-24 max-[450px]:h-16 w-32 h-20 text-[#D3C1EB] opacity-60 anim-float-delayed">
+                    <div className="absolute top-[45%] left-2 max-[420px]:w-24 max-[420px]:h-16 w-32 h-20 text-[#D3C1EB] opacity-60 anim-float-delayed">
                         <Cloud className="w-full h-full" />
                     </div>
-                    <div className="absolute bottom-[30%] left-8 max-[450px]:w-16 max-[450px]:h-8 w-20 h-12 text-[#FCE29F] opacity-70 anim-float">
+                    <div className="absolute bottom-[30%] left-8 max-[420px]:w-16 max-[420px]:h-8 w-20 h-12 text-[#FCE29F] opacity-70 anim-float">
                         <Cloud className="w-full h-full" />
                     </div>
-                    <div className="absolute bottom-[10%] right-12 max-[450px]:w-20 max-[450px]:h-12 w-28 h-16 text-[#F1B6C1] opacity-60 anim-float-delayed">
+                    <div className="absolute bottom-[10%] right-12 max-[420px]:w-20 max-[420px]:h-12 w-28 h-16 text-[#F1B6C1] opacity-60 anim-float-delayed">
                         <Cloud className="w-full h-full" />
                     </div>
                 </div>
 
                 {/* FIXED CONTENT WRAPPER */}
-                <div className="sticky top-0 left-0 w-full h-[80dvh] z-10 flex flex-col items-center justify-center p-6 md:p-8 -mt-[80dvh]">
+                <div className="sticky top-0 left-0 w-full h-[80dvh] z-10 flex flex-col items-center justify-center p-4 md:p-6 -mt-[80dvh]">
 
                     {/* SECTION 0: THE INTRO */}
-                    <div className={`absolute inset-0 pt-48 md:pt-60 max-[450px]:pt-40 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out 
+                    <div className={`absolute inset-0 pt-32 md:pt-40 max-[420px]:pt-28 flex flex-col items-center justify-center text-center px-6 md:px-10 transition-all duration-1000 ease-out 
                         ${activeIndex === 0
                             ? (isUnfolded ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-8 pointer-events-none")
                             : "opacity-0 -translate-y-8 pointer-events-none"}`}
                     >
-                        <h1 className={`font-script text-6xl md:text-7xl lg:text-8xl max-[450px]:text-5xl max-[450px]:leading-tight leading-[1.1] mb-6 drop-shadow-sm ${t.textAccent}`}>
+                        <h1 className={`font-script text-5xl md:text-6xl lg:text-7xl max-[420px]:text-4xl max-[420px]:leading-tight leading-[1.1] mb-6 drop-shadow-sm ${t.textAccent}`}>
                             {eventData?.eventType === "1st Birthday" ? (
                                 <>Look Who's<br />Turning One!</>
                             ) : (
                                 <>A Little One<br />is on the Way!</>
                             )}
                         </h1>
-                        <p className={`font-sans tracking-wide text-sm md:text-base max-[450px]:text-[11px] leading-relaxed max-w-[280px] md:max-w-sm max-[450px]:max-w-[240px] max-[450px]:text-xs ${t.textMain}`}>
+                        <p className={`font-sans tracking-wide text-base md:text-lg max-[420px]:text-sm leading-relaxed max-w-[320px] md:max-w-md max-[420px]:max-w-[280px] ${t.textMain}`}>
                             {eventData?.messages?.inviteText ||
                                 `Join ${eventData?.baby?.parents?.mother || "Sarah"} & ${eventData?.baby?.parents?.father || "Michael"} to celebrate the impending arrival of their little joy, baby ${babyName}!`}
                         </p>
                     </div>
 
                     {/* SECTION 1: THE DETAILS */}
-                    <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 1 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <p className={`font-script text-4xl md:text-5xl mb-4 max-[450px]:text-3xl max-[450px]:mb-2 ${t.textAccent}`}>When & Where</p>
-                        <p className={`font-sans font-light text-xs md:text-sm tracking-wide max-w-xs mb-6 max-[450px]:text-[10px] max-[450px]:mb-4 ${t.textMuted}`}>
+                    <div className={`absolute inset-0 pt-16 pb-12 max-[420px]:pt-20 max-[420px]:pb-16 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 1 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <p className={`font-script text-3xl md:text-4xl mb-2 max-[420px]:text-2xl max-[420px]:mb-1 ${t.textAccent}`}>When & Where</p>
+                        <p className={`font-sans font-light text-sm md:text-base tracking-wide max-w-xs mb-5 max-[420px]:text-[11px] max-[420px]:mb-3 ${t.textMuted}`}>
                             We cannot wait to share this beautiful evening with our closest friends and family.
                         </p>
 
-                        <div className="flex flex-col gap-5 w-full">
-                            <div className="flex flex-col items-center gap-1.5">
-                                <div className={`font-sans tracking-wide text-sm md:text-base max-[450px]:text-[11px] ${t.textMain}`}>
+                        <div className="flex flex-col gap-4 max-[420px]:gap-2 w-full">
+                            <div className="flex flex-col items-center gap-1">
+                                <div className={`font-sans tracking-wide text-base md:text-lg max-[420px]:text-sm ${t.textMain}`}>
                                     <span>{eventData?.celebrations?.[0]?.date || "Saturday, September 14th"}</span><br />
                                     <span>at {eventData?.celebrations?.[0]?.time || "2:00 PM"}</span>
                                 </div>
                             </div>
-                            <div className="flex flex-col items-center gap-1.5">
-                                <div className={`font-sans tracking-wide text-sm md:text-base max-[450px]:text-[11px] ${t.textMain}`}>
+                            <div className="flex flex-col items-center gap-1">
+                                <div className={`font-sans tracking-wide text-base md:text-lg max-[420px]:text-[13px] ${t.textMain}`}>
                                     <span>{eventData?.celebrations?.[0]?.venue || "123 Maple Drive, Anytown, CA"}</span>
                                 </div>
                                 <a
                                     href={generateCalendarLink(eventData?.celebrations?.[0])}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`mt-3 px-6 py-3 rounded-full text-xs md:text-sm font-semibold max-[450px]:text-[10px] max-[450px]:px-4 max-[450px]:py-2 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 ${t.btnSolid} hover:scale-105`}
+                                    className={`mt-2 px-6 py-2.5 rounded-full text-sm md:text-base font-semibold max-[420px]:text-xs max-[420px]:px-4 max-[420px]:py-2 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 ${t.btnSolid} hover:scale-105`}
                                 >
                                     Tap to Add to Calendar
                                 </a>
                             </div>
-                            <div className="flex flex-col items-center gap-1.5 mt-2">
-                                <div className={`font-sans tracking-wide text-sm md:text-base max-[450px]:text-[11px] ${t.textMain}`}>
+                            <div className="flex flex-col items-center gap-1 mt-1">
+                                <div className={`font-sans tracking-wide text-base md:text-lg max-[420px]:text-[13px] ${t.textMain}`}>
                                     <span>RSVP to</span><br />
                                     {eventData?.contact?.phone?.[0] ? (
                                         <span>{eventData.contact.phone[0].name} at {eventData.contact.phone[0].number}</span>
@@ -305,22 +305,22 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
                     </div>
 
                     {/* SECTION 2: THE CELEBRATION DETAILS */}
-                    <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 2 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <p className={`font-script text-4xl md:text-5xl mb-4 ${t.textAccent}`}>The Celebration</p>
+                    <div className={`absolute inset-0 pt-8 pb-12 flex flex-col items-center justify-center text-center px-6 md:px-10 transition-all duration-1000 ease-out ${activeIndex === 2 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <p className={`font-script text-3xl md:text-4xl max-[420px]:text-2xl mb-4 ${t.textAccent}`}>The Celebration</p>
 
                         {/* Removed engagement rings image */}
 
-                        <div className={`p-4 w-full max-w-sm rounded-sm ${t.card}`}>
-                            <div className="mb-3">
-                                <h4 className={`text-[10px] md:text-xs max-[450px]:text-[8px] font-sans font-bold uppercase tracking-[0.2em] mb-1 ${t.textMain}`}>Dress Code</h4>
-                                <p className={`font-serif text-xs md:text-sm max-[450px]:text-[10px] ${t.textMuted}`}>{eventData?.celebrations?.[0]?.dressCode || "Black-Tie Optional"}</p>
+                        <div className={`p-5 w-full max-w-sm rounded-sm ${t.card}`}>
+                            <div className="mb-4">
+                                <h4 className={`text-xs md:text-sm max-[420px]:text-[10px] font-sans font-bold uppercase tracking-[0.2em] mb-1.5 ${t.textMain}`}>Dress Code</h4>
+                                <p className={`font-serif text-sm md:text-base max-[420px]:text-xs ${t.textMuted}`}>{eventData?.celebrations?.[0]?.dressCode || "Black-Tie Optional"}</p>
                             </div>
 
-                            <div className={`w-8 h-px mx-auto mb-3 ${t.border} border-t`}></div>
+                            <div className={`w-12 h-px mx-auto mb-4 ${t.border} border-t`}></div>
 
                             <div>
-                                <h4 className={`text-[10px] md:text-xs max-[450px]:text-[8px] font-sans font-bold uppercase tracking-[0.2em] mb-1.5 ${t.textMain}`}>Your Presence</h4>
-                                <p className={`font-sans font-light text-[10px] md:text-sm max-[450px]:text-[9px] max-[450px]:leading-normal leading-relaxed ${t.textLight}`}>
+                                <h4 className={`text-xs md:text-sm max-[420px]:text-[10px] font-sans font-bold uppercase tracking-[0.2em] mb-2 ${t.textMain}`}>Your Presence</h4>
+                                <p className={`font-sans font-light text-sm md:text-base max-[420px]:text-xs max-[420px]:leading-relaxed leading-relaxed ${t.textLight}`}>
                                     Please bless us with your presence as we celebrate this beautiful new beginning. We look forward to sharing our joy with you.
                                 </p>
                             </div>
@@ -328,29 +328,29 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
                     </div>
 
                     {/* SECTION 3: CONTACT & SIGN OFF */}
-                    <div className={`absolute inset-0 pt-16 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 3 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <h2 className={`font-script text-5xl md:text-6xl max-[450px]:text-4xl max-[450px]:mb-4 mb-6 drop-shadow-sm ${t.textAccent}`}>Reach Out</h2>
-                        <p className={`font-sans font-light text-xs md:text-base tracking-wide leading-relaxed max-w-[280px] md:max-w-xs mb-8 max-[450px]:text-[10px] max-[450px]:max-w-[240px] max-[450px]:mb-5 ${t.textMuted}`}>
+                    <div className={`absolute inset-0 pt-16 pb-20 max-[420px]:pt-20 max-[420px]:pb-24 flex flex-col items-center justify-center text-center px-6 md:px-10 transition-all duration-1000 ease-out ${activeIndex === 3 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <h2 className={`font-script text-4xl md:text-5xl max-[420px]:text-3xl max-[420px]:mb-2 mb-4 drop-shadow-sm ${t.textAccent}`}>Reach Out</h2>
+                        <p className={`font-sans font-light text-sm md:text-base tracking-wide leading-relaxed max-w-[320px] md:max-w-sm mb-5 max-[420px]:text-[11px] max-[420px]:max-w-[280px] max-[420px]:mb-3 ${t.textMuted}`}>
                             For any queries regarding the celebrations or venue directions, please feel free to reach out to us.
                         </p>
 
-                        <div className={`p-6 w-full max-w-sm rounded-sm ${t.card} mb-8`}>
-                            <h4 className={`text-[10px] md:text-xs max-[450px]:text-[8px] font-sans font-bold uppercase tracking-[0.2em] mb-5 max-[450px]:mb-3 ${t.textMain}`}>Contact Details</h4>
+                        <div className={`p-4 w-full max-w-sm rounded-sm ${t.card} mb-4 max-[420px]:mb-3`}>
+                            <h4 className={`text-xs md:text-sm max-[420px]:text-[10px] font-sans font-bold uppercase tracking-[0.2em] mb-3 max-[420px]:mb-2 ${t.textMain}`}>Contact Details</h4>
 
                             {eventData?.contact?.phone ? (
-                                <div className="space-y-5">
+                                <div className="space-y-2">
                                     {eventData.contact.phone.map((ph: any, i: number) => (
-                                        <div key={i} className={`font-serif text-sm max-[450px]:text-xs tracking-widest ${t.textMuted}`}>
-                                            <span className={`font-sans font-bold ${t.textMain} text-[10px] md:text-xs max-[450px]:text-[8px] tracking-wider uppercase`}>{ph.name}</span><br />
-                                            <a href={`tel:${ph.number}`} className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity mt-1 inline-block">
+                                        <div key={i} className={`font-serif text-base md:text-lg max-[420px]:text-sm tracking-widest ${t.textMuted}`}>
+                                            <span className={`font-sans font-bold ${t.textMain} text-xs md:text-sm max-[420px]:text-[10px] tracking-wider uppercase`}>{ph.name}</span><br />
+                                            <a href={`tel:${ph.number}`} className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity mt-0.5 inline-block">
                                                 {ph.number}
                                             </a>
                                         </div>
                                     ))}
                                 </div>
                             ) : (
-                                <div className={`font-serif text-sm tracking-widest ${t.textMuted}`}>
-                                    <span className={`font-sans font-bold ${t.textMain} text-[10px] tracking-wider uppercase`}>Joseph</span><br />
+                                <div className={`font-serif text-base md:text-lg max-[420px]:text-sm tracking-widest ${t.textMuted}`}>
+                                    <span className={`font-sans font-bold ${t.textMain} text-xs md:text-sm max-[420px]:text-[10px] tracking-wider uppercase`}>Joseph</span><br />
                                     <a href="tel:+919876543210" className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity mt-1 inline-block">
                                         +91 9876543210
                                     </a>
@@ -358,13 +358,13 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
                             )}
                         </div>
 
-                        <h3 className={`font-script text-5xl md:text-6xl max-[450px]:text-4xl max-[450px]:mt-2 mt-4 ${t.textMain}`}>See you there</h3>
+                        <h3 className={`font-script text-4xl md:text-5xl max-[420px]:text-2xl mt-1 ${t.textMain}`}>See you there</h3>
 
                         {/* HALF SEAL FOR CLOSING */}
-                        <div className="absolute bottom-[-30px] md:bottom-[-40px] left-1/2 -translate-x-1/2 z-50">
+                        <div className="absolute bottom-[-60px] md:bottom-[-80px] left-1/2 -translate-x-1/2 z-50">
                             <button
                                 onClick={onClose}
-                                className="relative flex items-center justify-center w-28 h-28 md:w-36 md:h-36 max-[450px]:w-20 max-[450px]:h-20 rounded-full group cursor-pointer hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+                                className="relative flex items-center justify-center w-28 h-28 md:w-36 md:h-36 max-[420px]:w-20 max-[420px]:h-20 rounded-full group cursor-pointer hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
                             >
                                 {/* Minimal Royal Aura */}
 
@@ -386,7 +386,7 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
                                             d="M 100, 100 m -85, 0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
                                             fill="none"
                                         />
-                                        <text className={`text-[10px] md:text-xs max-[450px]:text-[7px] font-bold uppercase tracking-[0.2em] pointer-events-none ${t.sealOrbit}`}>
+                                        <text className={`text-[10px] md:text-xs max-[420px]:text-[7px] font-bold uppercase tracking-[0.2em] pointer-events-none ${t.sealOrbit}`}>
                                             <textPath href="#closeCirclePath" startOffset="25%" textAnchor="middle">
                                                 • Press here to reset •
                                             </textPath>
@@ -409,12 +409,12 @@ export default function Letter({ isOpen, onClose, className, eventData }: { isOp
                                     className={`flex flex-col items-center justify-center gap-2 group backdrop-blur-md px-6 py-3 rounded-full shadow-lg transition-all active:scale-95 ${t.navBtnBg} cursor-pointer select-none mb-2`}
                                     style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" }}
                                 >
-                                    <span className={`text-xs uppercase tracking-[0.2em] font-bold max-[450px]:text-[9px] ${t.navBtnText} pointer-events-none`}>
+                                    <span className={`text-xs uppercase tracking-[0.2em] font-bold max-[420px]:text-[9px] ${t.navBtnText} pointer-events-none`}>
                                         {activeIndex === 0 ? "Tap to Read" : "Tap for More"}
                                     </span>
                                     <ChevronDown className={`w-4 h-4 animate-bounce ${t.navBtnIcon} pointer-events-none`} strokeWidth={2.5} />
                                 </button>
-                                <span className={`text-[7px] md:text-[9px] max-[450px]:text-[6px] uppercase font-sans tracking-[0.2em] opacity-80 ${t.textMuted} pointer-events-none`}>
+                                <span className={`text-[7px] md:text-[9px] max-[420px]:text-[6px] uppercase font-sans tracking-[0.2em] opacity-80 ${t.textMuted} pointer-events-none`}>
                                     Or swipe to explore
                                 </span>
                             </div>
