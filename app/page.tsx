@@ -4,21 +4,25 @@ import eventData from "@/util/data/event-data.json";
 
 export async function generateMetadata() {
   const baseUrl = eventData.websiteUrl.endsWith('/') ? eventData.websiteUrl.slice(0, -1) : eventData.websiteUrl;
+  const imageUrl = `${baseUrl}/assets/images/social-share.png`;
 
   return {
     metadataBase: new URL(baseUrl),
     title: `${eventData.baby?.name || 'Baby'}'s ${eventData.eventType || 'Birthday'}`,
     description: eventData.messages.inviteText,
-    openGraph: {
-      type: 'website',
-      url: baseUrl,
-      title: `${eventData.baby?.name || 'Baby'}'s ${eventData.eventType || 'Birthday'}`,
-      description: eventData.messages.inviteText,
-    },
+    images: [
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: `${eventData.eventType || 'Birthday'} Invitation map snippet`
+      }
+    ],
     twitter: {
       card: 'summary_large_image',
       title: `${eventData.baby?.name || 'Baby'}'s ${eventData.eventType || 'Birthday'} Invitation`,
       description: eventData.messages.inviteText,
+      images: [imageUrl],
     }
   };
 }
