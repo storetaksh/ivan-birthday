@@ -1,7 +1,7 @@
 {
     "eventType": "1st Birthday",
     "baby": {
-        "name": "Yanshith",
+        "name": "Yanshit",
         "parents": {
             "mother": "Isha",
             "father": "Sanjeev"
@@ -15,7 +15,6 @@
             "venue": "Satvika Celebration, Vijay Path, Patna, Bihar 801105",
             "googleMapsUrl": "https://www.google.com/maps/dir//Satvika+Celebration,+Vijay+Path,+Patna,+Bihar+801105/@25.6077302,85.1384117,17z/data=!4m20!1m10!3m9!1s0x39ed5f41b82643d5:0xd22a600fc5b0cf8c!2sSatvika+Celebration+Hall!5m2!4m1!1i2!8m2!3d25.6077302!4d85.1384117!16s%2Fg%2F11tx59g5d1!4m8!1m0!1m5!1m1!1s0x39ed5f41b82643d5:0xd22a600fc5b0cf8c!2m2!1d85.1384117!2d25.6077302!3e0?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",
             "showLocation": true,
-            "mapImage": "assets/images/map.jpeg",
             "dressCode": "Casual & Cute",
             "highlight": true
         }
